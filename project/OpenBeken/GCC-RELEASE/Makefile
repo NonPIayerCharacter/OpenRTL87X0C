@@ -3,8 +3,9 @@ all: is
 OS := $(shell uname)
 LBITS := $(shell getconf LONG_BIT)
 
-include toolchain.mk
+#include toolchain.mk
 
+toolchain:
 
 .PHONY: is
 is: toolchain

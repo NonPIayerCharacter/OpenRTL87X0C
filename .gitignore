@@ -8,3 +8,5 @@ tools
 libsrc
 *.i
 *.map
+project/OpenBeken/GCC-RELEASE/partition.bin
+project/OpenBeken/inc/build_info.h

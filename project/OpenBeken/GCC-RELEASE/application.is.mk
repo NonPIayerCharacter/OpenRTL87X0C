@@ -13,7 +13,8 @@ DUMP_END_ADDRESS = 0x98200000
 
 OS := $(shell uname)
 
-CROSS_COMPILE = $(ARM_GCC_TOOLCHAIN)/arm-none-eabi-
+#CROSS_COMPILE = $(ARM_GCC_TOOLCHAIN)/arm-none-eabi-
+CROSS_COMPILE = arm-none-eabi-
 
 # Compilation tools
 AR = $(CROSS_COMPILE)ar

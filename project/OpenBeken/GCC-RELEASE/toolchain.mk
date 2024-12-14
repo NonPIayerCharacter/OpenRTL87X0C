@@ -20,7 +20,7 @@ word-dash = $(word $2,$(subst -, ,$1))
 TOOLCHAIN_VER = $(call word-dash,$(TOOLCHAIN_FILENAME), 2)
 ASDK_PLATFORM = $(call word-dash,$(TOOLCHAIN_FILENAME), 3)
 
-ARM_GCC_TOOLCHAIN = ../../../tools/arm-none-eabi-gcc/asdk/$(ASDK_PLATFORM)/newlib/bin
+#ARM_GCC_TOOLCHAIN = ../../../tools/arm-none-eabi-gcc/asdk/$(ASDK_PLATFORM)/newlib/bin
 
 # get extension and potential extracting folder, filename or asdk-(ver) 
 EXTRACT_FOLDER1 := asdk-$(TOOLCHAIN_VER)
@@ -39,7 +39,7 @@ endif
 
 LBITS := $(shell getconf LONG_BIT)
 
-.PHONY: toolchain
+#.PHONY: toolchain
 toolchain:
 	@echo Toolchain $(TOOLCHAIN_FILENAME) extracting...
 ifneq ("$(LBITS)", "$(TOOLCHAIN_BITS)")
