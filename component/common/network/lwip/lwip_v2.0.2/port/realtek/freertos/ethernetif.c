@@ -370,8 +370,10 @@ void lwip_PRE_SLEEP_PROCESSING(void)
 //Called in ips_leave() path, support tickless when wifi power wakeup due to ioctl or deinit
 void lwip_POST_SLEEP_PROCESSING(void)
 {
+#if LWIP_TCPIP_TIMEOUT
 	if(lwip_tickless_used) {
 		tcpip_timeout(ARP_TMR_INTERVAL, arp_timer, NULL);
 	}
+#endif
 }
 

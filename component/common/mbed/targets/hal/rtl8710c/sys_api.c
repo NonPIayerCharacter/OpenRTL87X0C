@@ -176,8 +176,10 @@ void sys_recover_ota_signature(void)
 	rtw_enter_critical(NULL, &irqL);
 	device_mutex_lock(RT_DEV_LOCK_FLASH);
 	flash_stream_read(&flash, targetFWaddr, FLASH_SECTOR_SIZE, pbuf);
+	// hack: copy sn
+	flash_stream_read(&flash, currentFWaddr, sizeof(fw1_sn), pbuf);
 	// NOT the first byte of ota signature to make it valid
-	pbuf[0] = ~(pbuf[0]);
+	//pbuf[0] = ~(pbuf[0]);
 	hal_flash_sector_erase(flash.phal_spic_adaptor, targetFWaddr);
 	hal_flash_burst_write(flash.phal_spic_adaptor, FLASH_SECTOR_SIZE, targetFWaddr, pbuf);
 	device_mutex_unlock(RT_DEV_LOCK_FLASH);

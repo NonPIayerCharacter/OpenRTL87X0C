@@ -29,8 +29,8 @@
 #define LWIP_COMPAT_MUTEX       1
 
 #define ETHARP_TRUST_IP_MAC     0
-#define IP_REASSEMBLY           1
-#define IP_FRAG                 1
+#define IP_REASSEMBLY           0
+#define IP_FRAG                 0
 #define ARP_QUEUEING            0
 
 /**
@@ -60,13 +60,13 @@ a lot of data that needs to be copied, this should be set high. */
 #elif defined(ENABLE_AMAZON_COMMON)
 #define MEM_SIZE                (10*1024)
 #else
-#define MEM_SIZE                (5*1024)
+#define MEM_SIZE                (8*1024)
 #endif
 
 /* MEMP_NUM_PBUF: the number of memp struct pbufs. If the application
    sends a lot of data out of ROM (or other static memory), this
    should be set high. */
-#define MEMP_NUM_PBUF           100
+#define MEMP_NUM_PBUF           10
 /* MEMP_NUM_UDP_PCB: the number of UDP protocol control blocks. One
    per active UDP "connection". */
 #define MEMP_NUM_UDP_PCB        6
@@ -98,7 +98,7 @@ a lot of data that needs to be copied, this should be set high. */
 #elif defined(ENABLE_AMAZON_COMMON)
 #define PBUF_POOL_SIZE          30
 #else
-#define PBUF_POOL_SIZE          20
+#define PBUF_POOL_SIZE          4
 #endif
 
 /* IP_REASS_MAX_PBUFS: Total maximum amount of pbufs waiting to be reassembled.*/
@@ -107,11 +107,11 @@ a lot of data that needs to be copied, this should be set high. */
 #elif defined(ENABLE_AMAZON_COMMON)
 #define IP_REASS_MAX_PBUFS              30
 #else
-#define IP_REASS_MAX_PBUFS              10
+#define IP_REASS_MAX_PBUFS              0
 #endif
 
 /* PBUF_POOL_BUFSIZE: the size of each pbuf in the pbuf pool. */
-#define PBUF_POOL_BUFSIZE       500
+#define PBUF_POOL_BUFSIZE       1580
 
 
 /* ---------- TCP options ---------- */
@@ -355,13 +355,13 @@ Certain platform allows computing and verifying the IP, UDP, TCP and ICMP checks
    ---------------------------------
 */
 
-#define TCPIP_THREAD_STACKSIZE          1000
-#define TCPIP_MBOX_SIZE                 6
-#define DEFAULT_UDP_RECVMBOX_SIZE       6
-#define DEFAULT_TCP_RECVMBOX_SIZE       6
-#define DEFAULT_RAW_RECVMBOX_SIZE		6
-#define DEFAULT_ACCEPTMBOX_SIZE         6
-#define DEFAULT_THREAD_STACKSIZE        500
+#define TCPIP_THREAD_STACKSIZE          512
+#define TCPIP_MBOX_SIZE                 16
+#define DEFAULT_UDP_RECVMBOX_SIZE       8
+#define DEFAULT_TCP_RECVMBOX_SIZE       8
+#define DEFAULT_RAW_RECVMBOX_SIZE		4
+#define DEFAULT_ACCEPTMBOX_SIZE         8
+#define DEFAULT_THREAD_STACKSIZE        256
 #ifdef PLATFORM_OHOS
 #define TCPIP_THREAD_PRIO               2
 #else

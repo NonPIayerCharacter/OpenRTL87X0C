@@ -6,3 +6,5 @@
 *.s
 tools
 libsrc
+*.i
+*.map
