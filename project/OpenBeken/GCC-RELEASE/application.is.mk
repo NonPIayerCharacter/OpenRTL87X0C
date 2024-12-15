@@ -242,16 +242,16 @@ SRC_C += ../../../component/soc/realtek/8710c/cmsis/rtl8710c/source/ram/sys_irq.
 SRC_C += ../../../component/soc/realtek/8710c/misc/utilities/source/ram/libc_wrap.c
 
 #console
-SRC_C += ../../../component/common/api/at_cmd/atcmd_bt.c
-SRC_C += ../../../component/common/api/at_cmd/atcmd_lwip.c
-SRC_C += ../../../component/common/api/at_cmd/atcmd_mp.c
-SRC_C += ../../../component/common/api/at_cmd/atcmd_mp_ext2.c
-SRC_C += ../../../component/common/api/at_cmd/atcmd_sys.c
-SRC_C += ../../../component/common/api/at_cmd/atcmd_wifi.c
-SRC_C += ../../../component/soc/realtek/8710c/app/shell/cmd_shell.c
-SRC_C += ../../../component/soc/realtek/8710c/app/shell/ram_s/consol_cmds.c
-SRC_C += ../../../component/common/api/at_cmd/log_service.c
-SRC_C += ../../../component/soc/realtek/8710c/misc/driver/rtl_console.c
+#SRC_C += ../../../component/common/api/at_cmd/atcmd_bt.c
+#SRC_C += ../../../component/common/api/at_cmd/atcmd_lwip.c
+#SRC_C += ../../../component/common/api/at_cmd/atcmd_mp.c
+#SRC_C += ../../../component/common/api/at_cmd/atcmd_mp_ext2.c
+#SRC_C += ../../../component/common/api/at_cmd/atcmd_sys.c
+#SRC_C += ../../../component/common/api/at_cmd/atcmd_wifi.c
+#SRC_C += ../../../component/soc/realtek/8710c/app/shell/cmd_shell.c
+#SRC_C += ../../../component/soc/realtek/8710c/app/shell/ram_s/consol_cmds.c
+#SRC_C += ../../../component/common/api/at_cmd/log_service.c
+#SRC_C += ../../../component/soc/realtek/8710c/misc/driver/rtl_console.c
 
 #network - api
 SRC_C += ../../../component/common/api/lwip_netconf.c

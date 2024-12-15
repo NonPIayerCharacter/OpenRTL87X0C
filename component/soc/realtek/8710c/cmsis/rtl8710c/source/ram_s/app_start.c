@@ -253,7 +253,7 @@ void app_start (void)
 #endif
 
 	__secure_init_array();
-	shell_cmd_init ();
+	//shell_cmd_init ();
 #if defined(CONFIG_MATTER) && CONFIG_MATTER
 	start_random_seed();
 #else
