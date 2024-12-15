@@ -264,22 +264,22 @@ SRC_C += ../../../component/common/api/wifi/wifi_util.c
 
 #network - api - wifi - rtw_wpa_supplicant
 SRC_C += ../../../component/common/api/wifi/rtw_wpa_supplicant/src/crypto/tls_polarssl.c
-SRC_C += ../../../component/common/api/wifi/rtw_wpa_supplicant/wpa_supplicant/wifi_eap_config.c
-SRC_C += ../../../component/common/api/wifi/rtw_wpa_supplicant/wpa_supplicant/wifi_wps_config.c
+#SRC_C += ../../../component/common/api/wifi/rtw_wpa_supplicant/wpa_supplicant/wifi_eap_config.c
+#SRC_C += ../../../component/common/api/wifi/rtw_wpa_supplicant/wpa_supplicant/wifi_wps_config.c
 
 #network - app
 SRC_C += ../../../component/soc/realtek/8710c/misc/platform/ota_8710c.c
-SRC_C += ../../../component/common/api/network/src/ping_test.c
-SRC_C += ../../../component/common/utilities/ssl_client.c
-SRC_C += ../../../component/common/utilities/ssl_client_ext.c
-SRC_C += ../../../component/common/utilities/tcptest.c
+#SRC_C += ../../../component/common/api/network/src/ping_test.c
+#SRC_C += ../../../component/common/utilities/ssl_client.c
+#SRC_C += ../../../component/common/utilities/ssl_client_ext.c
+#SRC_C += ../../../component/common/utilities/tcptest.c
 SRC_C += ../../../component/common/api/network/src/wlan_network.c
 
 #utilities
 #SRC_C += ../../../component/common/utilities/cJSON.c
 #SRC_C += ../../../component/common/utilities/http_client.c
-SRC_C += ../../../component/common/utilities/xml.c
-SRC_C += ../../../component/common/utilities/gb2unicode.c
+#SRC_C += ../../../component/common/utilities/xml.c
+#SRC_C += ../../../component/common/utilities/gb2unicode.c
 
 #network - app - mqtt
 #SRC_C += ../../../component/common/application/mqtt/MQTTClient/MQTTClient.c
@@ -305,8 +305,8 @@ SRC_C += ../../../component/common/network/coap/sn_coap_parser.c
 SRC_C += ../../../component/common/network/coap/sn_coap_protocol.c
 
 #network - http
-SRC_C += ../../../component/common/network/httpc/httpc_tls.c
-SRC_C += ../../../component/common/network/httpd/httpd_tls.c
+#SRC_C += ../../../component/common/network/httpc/httpc_tls.c
+#SRC_C += ../../../component/common/network/httpd/httpd_tls.c
 
 #network
 SRC_C += ../../../component/common/network/dhcp/dhcps.c
@@ -429,8 +429,8 @@ SRC_C += ../../../component/common/network/ssl/ssl_ram_map/rom/rom_ssl_ram_map.c
 SRC_C += ../../../component/common/network/ssl/ssl_func_stubs/ssl_func_stubs.c
 
 #network - websocket
-SRC_C += ../../../component/common/network/websocket/wsclient_tls.c
-SRC_C += ../../../component/common/network/websocket/wsserver_tls.c
+#SRC_C += ../../../component/common/network/websocket/wsclient_tls.c
+#SRC_C += ../../../component/common/network/websocket/wsserver_tls.c
 
 #os
 SRC_C += ../../../component/os/freertos/cmsis_os.c
@@ -493,11 +493,11 @@ SRC_C += ../../../component/soc/realtek/8710c/fwlib/source/ram/hal_uart.c
 #SRC_C += ../../../component/common/drivers/wlan/realtek/src/core/option/rtw_opt_rf_para_rtl8710c.c
 
 #file_system - fatfs
-SRC_C += ../../../component/common/file_system/fatfs/fatfs_ext/src/ff_driver.c
-SRC_C += ../../../component/common/file_system/fatfs/r0.10c/src/diskio.c
-SRC_C += ../../../component/common/file_system/fatfs/r0.10c/src/ff.c
-SRC_C += ../../../component/common/file_system/fatfs/r0.10c/src/option/ccsbcs.c
-SRC_C += ../../../component/common/file_system/fatfs/disk_if/src/flash_fatfs.c
+#SRC_C += ../../../component/common/file_system/fatfs/fatfs_ext/src/ff_driver.c
+#SRC_C += ../../../component/common/file_system/fatfs/r0.10c/src/diskio.c
+#SRC_C += ../../../component/common/file_system/fatfs/r0.10c/src/ff.c
+#SRC_C += ../../../component/common/file_system/fatfs/r0.10c/src/option/ccsbcs.c
+#SRC_C += ../../../component/common/file_system/fatfs/disk_if/src/flash_fatfs.c
 
 #utilities - example
 #SRC_C += ../../../component/common/example/bcast/example_bcast.c
