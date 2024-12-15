@@ -723,7 +723,8 @@ void LwIP_AUTOIP(struct netif *pnetif)
 	autoip = pnetif->autoip;
 #endif
 
-	while (autoip->state == AUTOIP_STATE_CHECKING) {
+	while ((autoip->state == AUTOIP_STATE_PROBING) || (autoip->state == AUTOIP_STATE_ANNOUNCING)) {
+	//while (autoip->state == AUTOIP_STATE_CHECKING) {
 		vTaskDelay(1000);
 	}
 
