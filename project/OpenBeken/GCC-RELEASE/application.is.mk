@@ -36,7 +36,7 @@ Q :=
 endif
 CFLAGS =
 
-LWIP_VERSION=v2.0.2
+LWIP_VERSION=v2.2.0
 
 # Initialize target name and target object files
 # -------------------------------------------------------------------
@@ -351,6 +351,8 @@ SRC_C += ../../../component/common/network/lwip/lwip_$(LWIP_VERSION)/src/core/ip
 SRC_C += ../../../component/common/network/lwip/lwip_$(LWIP_VERSION)/src/core/ipv4/ip4.c
 SRC_C += ../../../component/common/network/lwip/lwip_$(LWIP_VERSION)/src/core/ipv4/ip4_addr.c
 SRC_C += ../../../component/common/network/lwip/lwip_$(LWIP_VERSION)/src/core/ipv4/ip4_frag.c
+#for 2.2.0
+SRC_C += ../../../component/common/network/lwip/lwip_$(LWIP_VERSION)/src/core/ipv4/acd.c
 
 #network - lwip - core - ipv6
 SRC_C += ../../../component/common/network/lwip/lwip_$(LWIP_VERSION)/src/core/ipv6/dhcp6.c
