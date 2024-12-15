@@ -709,7 +709,7 @@ static const int _DAYS_BEFORE_MONTH[12] =
 #include "time64.h"
 #include <platform_stdlib.h>
 
-#if defined (__ICCARM__) || (__GNUC__ > 9)
+#if !defined(_TIME_H_) //defined (__ICCARM__) || (__GNUC__ > 9)
 extern long long  _Tzoff();
 
 typedef struct __tzrule_struct {

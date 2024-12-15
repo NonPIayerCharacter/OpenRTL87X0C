@@ -7,6 +7,8 @@
 #ifndef __PLATFORM_OPTS_H__
 #define __PLATFORM_OPTS_H__
 
+#define TCP_MSL 1000
+
 /*For MP mode setting*/
 #define SUPPORT_MP_MODE		1
 
