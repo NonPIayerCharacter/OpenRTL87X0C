@@ -89,10 +89,10 @@
  */
 
 /* backup area start address */
-#define EF_START_ADDR             0x1D0000
+#define EF_START_ADDR             0x1F0000
 
 /* ENV area size. It's at least one empty sector for GC. So it's definition must more then or equal 2 flash sector size. */
-#define ENV_AREA_SIZE             0x18000 /* default is the double erase min size */
+#define ENV_AREA_SIZE             0x10000 /* default is the double erase min size */
 
 /* print debug information of flash */
 #ifdef PKG_EASYFLASH_DEBUG
