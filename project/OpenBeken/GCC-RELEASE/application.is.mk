@@ -147,8 +147,6 @@ INCLUDES += -I../../../component/os/os_dep/include
 INCLUDES += -I../../../component/common/application/amazon/amazon-ffs/ffs_demo/common/include
 INCLUDES += -I../../../component/common/application/amazon/amazon-ffs/ffs_demo/realtek/configs
 
-INCLUDES += -I../../../component/common/utilities/easyflash/inc
-
 # Source file list
 # -------------------------------------------------------------------
 
@@ -540,16 +538,6 @@ SRC_C += ../../../component/soc/realtek/8710c/fwlib/source/ram/hal_uart.c
 #SRC_C += ../../../component/common/example/fatfs/example_fatfs.c
 #SRC_C += ../../../component/common/example/tickless_wifi_roaming/example_tickless_wifi_roaming.c
 #SRC_C += ../../../component/common/example/ipv6/example_ipv6.c
-
-SRC_C += ../../../component/common/utilities/easyflash/ports/ef_port.c
-SRC_C += ../../../component/common/utilities/easyflash/src/easyflash.c
-#SRC_C += ../../../component/common/utilities/easyflash/src/ef_cmd.c
-SRC_C += ../../../component/common/utilities/easyflash/src/ef_env.c
-SRC_C += ../../../component/common/utilities/easyflash/src/ef_env_legacy.c
-SRC_C += ../../../component/common/utilities/easyflash/src/ef_env_legacy_wl.c
-SRC_C += ../../../component/common/utilities/easyflash/src/ef_iap.c
-SRC_C += ../../../component/common/utilities/easyflash/src/ef_log.c
-SRC_C += ../../../component/common/utilities/easyflash/src/ef_utils.c
 
 -include ../../../../../platforms/RTL87X0C/OpenBeken.mk
 #user
