@@ -215,7 +215,7 @@ standard names - or at least those used in the unmodified vector table. */
 									pcAssertTask = pcTaskGetName( NULL ); \
 								} \
 								dbg_printf("\n\r[%s]Assert(" #x ") failed on line %d in file %s\r\n", pcAssertTask, __LINE__, __FILE__); \
-								taskDISABLE_INTERRUPTS(); for(;;);} \
+								taskDISABLE_INTERRUPTS(); ota_platform_reset();} \
 							} while(0)
 #endif
 #define configPRINTF( x ) dbg_printf( x )
