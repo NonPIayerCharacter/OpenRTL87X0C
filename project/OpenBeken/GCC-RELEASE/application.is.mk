@@ -572,14 +572,14 @@ DEPENDENCY_LIST += $(addprefix $(OBJ_DIR)/,$(patsubst %.cpp,%_$(TARGET).d,$(SRC_
 # Compile options
 # -------------------------------------------------------------------
 
-CFLAGS += -march=armv8-m.main+dsp -mthumb -mcmse -mfloat-abi=soft -D__thumb2__ -g -gdwarf-3 -Os
-CFLAGS += -D__ARM_ARCH_8M_MAIN__=1 -gdwarf-3 -fstack-usage -fdata-sections -ffunction-sections 
+CFLAGS += -march=armv8-m.main+dsp -mthumb -mcmse -mfloat-abi=soft -D__thumb2__ -g0 -Os
+CFLAGS += -D__ARM_ARCH_8M_MAIN__=1 -fstack-usage -fdata-sections -ffunction-sections 
 CFLAGS += -fdiagnostics-color=always -Wall -Wpointer-arith -Wno-write-strings --save-temps
 CFLAGS += -Wno-maybe-uninitialized -c -MMD -fsigned-char
 CFLAGS += -DCONFIG_PLATFORM_8710C -DCONFIG_BUILD_RAM=1
 CFLAGS += -DV8M_STKOVF
 
-CPPFLAGS := $(CFLAGS)
+CPPFLAGS += $(CFLAGS)
 
 #for time64 
 ifdef SYSTEM_TIME64_MAKE_OPTION
