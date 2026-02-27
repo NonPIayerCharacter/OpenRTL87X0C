@@ -85,6 +85,7 @@ void hci_tp_open(P_HCI_TP_OPEN_CB open_cb, P_HCI_TP_RX_IND rx_ind)
     }
 }
 
+__attribute__((weak))
 void hci_tp_close(void)
 {
     HCI_PRINT_INFO0("hci_tp_close");

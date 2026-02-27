@@ -154,28 +154,28 @@ SRC_C =
 SRAM_C =
 ERAM_C =
 #bluetooth - board
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/hci/bt_fwconfig.c
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/hci/bt_mp_patch.c
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/hci/bt_normal_patch.c
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/common/src/cycle_queue.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/hci/bt_fwconfig.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/hci/bt_mp_patch.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/hci/bt_normal_patch.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/common/src/cycle_queue.c
 #SRC_C += ../../../component/common/file_system/ftl/ftl.c
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/hci/hci_board.c
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/hci/hci_uart.c
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/common/os/freertos/osif_freertos.c
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/platform_utils.c
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/rtk_coex.c
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/trace_uart.c
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/vendor_cmd/vendor_cmd.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/hci/hci_board.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/hci/hci_uart.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/common/os/freertos/osif_freertos.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/platform_utils.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/rtk_coex.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/trace_uart.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/amebaz2/src/vendor_cmd/vendor_cmd.c
 
 #bluetooth - common
 #SRC_C += ../../../component/common/bluetooth/realtek/sdk/src/ble/profile/client/ancs_client.c
 #SRC_C += ../../../component/common/bluetooth/realtek/sdk/src/ble/profile/server/bas.c
 #SRC_C += ../../../component/common/bluetooth/realtek/sdk/src/ble/profile/client/bas_client.c
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/common/src/bt_uart_bridge.c
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/src/ble/profile/server/dis.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/common/src/bt_uart_bridge.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/src/ble/profile/server/dis.c
 #SRC_C += ../../../component/common/bluetooth/realtek/sdk/src/ble/profile/client/gaps_client.c
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/common/src/hci_adapter.c
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/common/src/hci_process.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/common/src/hci_adapter.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/common/src/hci_process.c
 #SRC_C += ../../../component/common/bluetooth/realtek/sdk/src/ble/profile/server/hids.c
 ##SRC_C += ../../../component/common/bluetooth/realtek/sdk/src/ble/profile/server/hids_kb.c
 ##SRC_C += ../../../component/common/bluetooth/realtek/sdk/src/ble/profile/server/hids_rmc.c
@@ -183,7 +183,7 @@ ERAM_C =
 #SRC_C += ../../../component/common/bluetooth/realtek/sdk/src/ble/profile/server/simple_ble_service.c
 #SRC_C += ../../../component/common/bluetooth/realtek/sdk/src/ble/profile/client/ota_client.c
 #SRC_C += ../../../component/common/bluetooth/realtek/sdk/src/ble/profile/client/dfu_client.c
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/common/src/trace_task.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/board/common/src/trace_task.c
 
 #bluetooth - example - ble_central
 #SRC_C += ../../../component/common/bluetooth/realtek/sdk/example/ble_central/ble_central_app_main.c
@@ -191,7 +191,7 @@ ERAM_C =
 #SRC_C += ../../../component/common/bluetooth/realtek/sdk/example/ble_central/ble_central_at_cmd.c
 #SRC_C += ../../../component/common/bluetooth/realtek/sdk/example/ble_central/ble_central_client_app.c
 #SRC_C += ../../../component/common/bluetooth/realtek/sdk/example/ble_central/ble_central_link_mgr.c
-#SRC_C += ../../../component/common/bluetooth/realtek/sdk/src/ble/profile/client/gcs_client.c
+SRC_C += ../../../component/common/bluetooth/realtek/sdk/src/ble/profile/client/gcs_client.c
 
 #bluetooth - example - ble_peripheral
 #SRC_C += ../../../component/common/bluetooth/realtek/sdk/example/ble_peripheral/app_task.c
@@ -686,23 +686,23 @@ endif
 
 .PHONY: build_info
 build_info:
-	@echo \#define RTL_FW_COMPILE_TIME RTL8710CFW_COMPILE_TIME\ > .ver
-	@echo \#define RTL_FW_COMPILE_DATE RTL8710CFW_COMPILE_DATE\ >> .ver
-	@echo \#define UTS_VERSION \"`date +%Y/%m/%d-%T`\" >> .ver
-	@echo \#define RTL8710CFW_COMPILE_TIME \"`date +%Y/%m/%d-%T`\" >> .ver
-	@echo \#define RTL8710CFW_COMPILE_DATE \"`date +%Y%m%d`\" >> .ver
-	@echo \#define RTL8710CFW_COMPILE_BY \"`id -u -n`\" >> .ver
-	@echo \#define RTL8710CFW_COMPILE_HOST \"`$(HOSTNAME_APP)`\" >> .ver
-	@if [ -x /bin/dnsdomainname ]; then \
-		echo \#define RTL8710CFW_COMPILE_DOMAIN \"`dnsdomainname`\"; \
-	elif [ -x /bin/domainname ]; then \
-		echo \#define RTL8710CFW_COMPILE_DOMAIN \"`domainname`\"; \
-	else \
-		echo \#define RTL8710CFW_COMPILE_DOMAIN ; \
-	fi >> .ver
+#	@echo \#define RTL_FW_COMPILE_TIME RTL8710CFW_COMPILE_TIME\ > .ver
+#	@echo \#define RTL_FW_COMPILE_DATE RTL8710CFW_COMPILE_DATE\ >> .ver
+#	@echo \#define UTS_VERSION \"`date +%Y/%m/%d-%T`\" >> .ver
+#	@echo \#define RTL8710CFW_COMPILE_TIME \"`date +%Y/%m/%d-%T`\" >> .ver
+#	@echo \#define RTL8710CFW_COMPILE_DATE \"`date +%Y%m%d`\" >> .ver
+#	@echo \#define RTL8710CFW_COMPILE_BY \"`id -u -n`\" >> .ver
+#	@echo \#define RTL8710CFW_COMPILE_HOST \"`$(HOSTNAME_APP)`\" >> .ver
+#	@if [ -x /bin/dnsdomainname ]; then \
+#		echo \#define RTL8710CFW_COMPILE_DOMAIN \"`dnsdomainname`\"; \
+#	elif [ -x /bin/domainname ]; then \
+#		echo \#define RTL8710CFW_COMPILE_DOMAIN \"`domainname`\"; \
+#	else \
+#		echo \#define RTL8710CFW_COMPILE_DOMAIN ; \
+#	fi >> .ver
 
-	@echo \#define RTL8710CFW_COMPILER \"gcc `$(CC) $(CFLAGS) -dumpversion | tr --delete '\r'`\" >> .ver
-	@mv -f .ver ../inc/$@.h
+#	@echo \#define RTL8710CFW_COMPILER \"gcc `$(CC) $(CFLAGS) -dumpversion | tr --delete '\r'`\" >> .ver
+#	@mv -f .ver ../inc/$@.h
 
 .PHONY: prerequirement
 prerequirement:
