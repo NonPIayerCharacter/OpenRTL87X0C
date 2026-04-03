@@ -13,8 +13,8 @@ DUMP_END_ADDRESS = 0x98200000
 
 OS := $(shell uname)
 
-#CROSS_COMPILE = $(ARM_GCC_TOOLCHAIN)/arm-none-eabi-
-CROSS_COMPILE = arm-none-eabi-
+CROSS_COMPILE = $(ARM_GCC_TOOLCHAIN)arm-none-eabi-
+#CROSS_COMPILE = arm-none-eabi-
 
 # Compilation tools
 AR = $(CROSS_COMPILE)ar
@@ -573,12 +573,12 @@ DEPENDENCY_LIST += $(addprefix $(OBJ_DIR)/,$(patsubst %.cpp,%_$(TARGET).d,$(SRC_
 # -------------------------------------------------------------------
 
 CFLAGS += -march=armv8-m.main+dsp -mthumb -mcmse -mfloat-abi=soft -D__thumb2__ -g0 -Os
-CFLAGS += -D__ARM_ARCH_8M_MAIN__=1 -fstack-usage -fdata-sections -ffunction-sections 
-CFLAGS += -fdiagnostics-color=always -Wall -Wpointer-arith -Wno-write-strings --save-temps
+CFLAGS += -D__ARM_ARCH_8M_MAIN__=1 -fdata-sections -ffunction-sections 
+CFLAGS += -fdiagnostics-color=always -Wall -Wpointer-arith -Wno-write-strings
 CFLAGS += -Wno-maybe-uninitialized -c -MMD -fsigned-char
 CFLAGS += -DCONFIG_PLATFORM_8710C -DCONFIG_BUILD_RAM=1
 CFLAGS += -DV8M_STKOVF
-
+#CFLAGS += -fstack-usage -save-temps
 CPPFLAGS += $(CFLAGS)
 
 #for time64 
@@ -590,7 +590,8 @@ CFLAGS += -DCONFIG_SYSTEM_TIME64=0
 endif
 
 #CFLAGS += -Wstrict-prototypes 
-CPPFLAGS += -std=c++11 -fno-use-cxa-atexit
+CPPFLAGS += -std=c++11 -fno-use-cxa-atexit -flto=auto
+#CFLAGS += -std=gnu11
 
 LFLAGS = 
 LFLAGS += -Os -march=armv8-m.main+dsp -mthumb -mcmse -mfloat-abi=soft -nostartfiles -nodefaultlibs -nostdlib -specs=nosys.specs
@@ -725,37 +726,37 @@ $(SRC_OO): %_$(TARGET).oo : %.cpp | prerequirement
 	$(Q)$(CC) $(CPPFLAGS) -c $< -o $@
 	$(Q)$(CC) $(CPPFLAGS) -c $< -MM -MT $@ -MF $(OBJ_DIR)/$(notdir $(patsubst %.oo,%.d,$@))
 	$(Q)cp $@ $(OBJ_DIR)/$(notdir $@)
-	$(Q)mv $(notdir $*.ii) $(INFO_DIR)
+#	$(Q)mv $(notdir $*.ii) $(INFO_DIR)
 #	$(Q)mv $(notdir $*.s) $(INFO_DIR)
 	$(Q)chmod 777 $(OBJ_DIR)/$(notdir $@)
 
 $(SRC_O): %_$(TARGET).o : %.c | prerequirement
 	@echo "compile_c $<"
-	$(Q)$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-	$(Q)$(CC) $(CFLAGS) $(INCLUDES) -c $< -MM -MT $@ -MF $(OBJ_DIR)/$(notdir $(patsubst %.o,%.d,$@))
+	$(Q)$(CC) $(CFLAGS) -std=gnu11 $(INCLUDES) -c $< -o $@
+	$(Q)$(CC) $(CFLAGS) -std=gnu11 $(INCLUDES) -c $< -MM -MT $@ -MF $(OBJ_DIR)/$(notdir $(patsubst %.o,%.d,$@))
 	$(Q)cp $@ $(OBJ_DIR)/$(notdir $@)
-	$(Q)mv $(notdir $*.i) $(INFO_DIR)
-	$(Q)mv $(notdir $*.s) $(INFO_DIR)
+#	$(Q)mv $(notdir $*.i) $(INFO_DIR)
+#	$(Q)mv $(notdir $*.s) $(INFO_DIR)
 	$(Q)chmod 777 $(OBJ_DIR)/$(notdir $@)
 
 $(SRAM_O): %_$(TARGET).o : %.c | prerequirement
 	@echo "compile_c $<"
-	$(Q)$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	$(Q)$(CC) $(CFLAGS) -std=gnu11 $(INCLUDES) -c $< -o $@
 	$(Q)$(OBJCOPY) --prefix-alloc-sections .sram $@
-	$(Q)$(CC) $(CFLAGS) $(INCLUDES) -c $< -MM -MT $@ -MF $(OBJ_DIR)/$(notdir $(patsubst %.o,%.d,$@))
+	$(Q)$(CC) $(CFLAGS) -std=gnu11 $(INCLUDES) -c $< -MM -MT $@ -MF $(OBJ_DIR)/$(notdir $(patsubst %.o,%.d,$@))
 	$(Q)cp $@ $(OBJ_DIR)/$(notdir $@)
-	$(Q)mv $(notdir $*.i) $(INFO_DIR)
-	$(Q)mv $(notdir $*.s) $(INFO_DIR)
+#	$(Q)mv $(notdir $*.i) $(INFO_DIR)
+#	$(Q)mv $(notdir $*.s) $(INFO_DIR)
 	$(Q)chmod 777 $(OBJ_DIR)/$(notdir $@)
 
 $(ERAM_O): %_$(TARGET).o : %.c | prerequirement
 	@echo "compile_c $<"
-	$(Q)$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	$(Q)$(CC) $(CFLAGS) -std=gnu11 $(INCLUDES) -c $< -o $@
 	$(Q)$(OBJCOPY) --prefix-alloc-sections .psram $@
-	$(Q)$(CC) $(CFLAGS) $(INCLUDES) -c $< -MM -MT $@ -MF $(OBJ_DIR)/$(notdir $(patsubst %.o,%.d,$@))
+	$(Q)$(CC) $(CFLAGS) -std=gnu11 $(INCLUDES) -c $< -MM -MT $@ -MF $(OBJ_DIR)/$(notdir $(patsubst %.o,%.d,$@))
 	$(Q)cp $@ $(OBJ_DIR)/$(notdir $@)
-	$(Q)mv $(notdir $*.i) $(INFO_DIR)
-	$(Q)mv $(notdir $*.s) $(INFO_DIR)
+#	$(Q)mv $(notdir $*.i) $(INFO_DIR)
+#	$(Q)mv $(notdir $*.s) $(INFO_DIR)
 	$(Q)chmod 777 $(OBJ_DIR)/$(notdir $@)
 
 -include $(DEPENDENCY_LIST)

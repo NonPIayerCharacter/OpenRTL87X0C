@@ -10,3 +10,4 @@ libsrc
 *.map
 project/OpenBeken/GCC-RELEASE/partition.bin
 project/OpenBeken/inc/build_info.h
+tools/arm-none-eabi-gcc/arm-none-eabi-gcc
